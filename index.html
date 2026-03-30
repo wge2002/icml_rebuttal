@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Supplementary Tables</title>
+    <style>
+      :root {
+        --bg: #f5f1e8;
+        --panel: rgba(255, 255, 255, 0.9);
+        --line: #d7d0c2;
+        --text: #2a2620;
+        --muted: #6b6256;
+        --accent: #9a6b2f;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: Georgia, "Times New Roman", serif;
+        color: var(--text);
+        background:
+          radial-gradient(circle at top left, #fffaf0 0%, transparent 28%),
+          linear-gradient(180deg, #f8f4ec 0%, var(--bg) 100%);
+      }
+
+      .page {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 48px 20px 72px;
+      }
+
+      .hero {
+        margin-bottom: 28px;
+        padding: 28px;
+        border: 1px solid var(--line);
+        background: var(--panel);
+        box-shadow: 0 18px 45px rgba(80, 60, 25, 0.08);
+      }
+
+      h1,
+      h2 {
+        margin: 0;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+      }
+
+      h1 {
+        font-size: clamp(2rem, 4vw, 3rem);
+      }
+
+      .subtitle {
+        margin-top: 12px;
+        max-width: 700px;
+        color: var(--muted);
+        font-size: 1.05rem;
+        line-height: 1.6;
+      }
+
+      .table-card {
+        margin-top: 26px;
+        padding: 22px;
+        border: 1px solid var(--line);
+        background: var(--panel);
+        box-shadow: 0 12px 30px rgba(80, 60, 25, 0.06);
+        overflow-x: auto;
+      }
+
+      .table-title {
+        margin-bottom: 14px;
+      }
+
+      .table-title h2 {
+        font-size: 1.55rem;
+      }
+
+      .table-title p {
+        margin: 6px 0 0;
+        color: var(--muted);
+        line-height: 1.5;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        min-width: 860px;
+      }
+
+      th,
+      td {
+        padding: 16px 18px;
+        border: 1px solid var(--line);
+        text-align: left;
+        vertical-align: top;
+        font-size: 1rem;
+        line-height: 1.45;
+      }
+
+      th {
+        background: #f3ede2;
+        font-weight: 600;
+      }
+
+      td:first-child,
+      th:first-child {
+        width: 220px;
+      }
+
+      .empty {
+        color: #8f877a;
+      }
+
+      .footnote {
+        margin-top: 12px;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      @media (max-width: 720px) {
+        .page {
+          padding: 28px 14px 48px;
+        }
+
+        .hero,
+        .table-card {
+          padding: 16px;
+        }
+
+        th,
+        td {
+          padding: 12px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <section class="hero">
+        <h1>Supplementary Tables</h1>
+        <p class="subtitle">
+          This page provides two supplementary tables in a simple web format so
+          they can be shared through a public repository link.
+        </p>
+      </section>
+
+      <section class="table-card">
+        <div class="table-title">
+          <h2>Extra Table 1</h2>
+          <p>Training reward results across settings and optimization steps.</p>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th>Reward 10steps (0-100epochs)</th>
+              <th>Reward 1steps (0-100epochs)</th>
+              <th>Reward 10steps (100-200epochs)</th>
+              <th>Reward 1steps (100-200epochs)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>ppo</td>
+              <td>622+-192</td>
+              <td class="empty">\</td>
+              <td class="empty">\</td>
+              <td class="empty">\</td>
+            </tr>
+            <tr>
+              <td>fpo</td>
+              <td>641+-140</td>
+              <td class="empty"></td>
+              <td class="empty">\</td>
+              <td class="empty">\</td>
+            </tr>
+            <tr>
+              <td>refpo</td>
+              <td>686+-139</td>
+              <td class="empty"></td>
+              <td class="empty">\</td>
+              <td class="empty">\</td>
+            </tr>
+            <tr>
+              <td>reinflow</td>
+              <td class="empty"></td>
+              <td class="empty"></td>
+              <td class="empty"></td>
+              <td class="empty"></td>
+            </tr>
+            <tr>
+              <td>grpo</td>
+              <td class="empty"></td>
+              <td class="empty"></td>
+              <td class="empty"></td>
+              <td class="empty"></td>
+            </tr>
+            <tr>
+              <td>Trajectory-advantage-weighted ReFPO</td>
+              <td>671.12+-160.8</td>
+              <td>639.52+-165.74</td>
+              <td class="empty">\</td>
+              <td class="empty">\</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="table-card">
+        <div class="table-title">
+          <h2>Extra Table 2</h2>
+          <p>Explosion-rate statistics for Jacobian and ratio signals.</p>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th>Jacobian explosion rate</th>
+              <th>Ratio explosion rate</th>
+              <th>For top10% jacobian samples ratio explosion rate</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>refpo</td>
+              <td>0.0119</td>
+              <td>0.00188</td>
+              <td class="empty"></td>
+            </tr>
+            <tr>
+              <td>fpo</td>
+              <td>0.0145</td>
+              <td>0.00350</td>
+              <td class="empty"></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p class="footnote">
+          Placeholder blank cells are kept intentionally so the final values can
+          be filled in later without changing the layout.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
