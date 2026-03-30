@@ -5,94 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Supplementary Tables</title>
     <style>
-      :root {
-        --bg: #f5f1e8;
-        --panel: rgba(255, 255, 255, 0.9);
-        --line: #d7d0c2;
-        --text: #2a2620;
-        --muted: #6b6256;
-        --accent: #9a6b2f;
-      }
-
       * {
         box-sizing: border-box;
       }
 
       body {
         margin: 0;
-        font-family: Georgia, "Times New Roman", serif;
-        color: var(--text);
-        background:
-          radial-gradient(circle at top left, #fffaf0 0%, transparent 28%),
-          linear-gradient(180deg, #f8f4ec 0%, var(--bg) 100%);
+        font-family: "Times New Roman", Times, serif;
+        color: #000000;
+        background: #ffffff;
       }
 
       .page {
-        max-width: 1200px;
+        max-width: 1280px;
         margin: 0 auto;
-        padding: 48px 20px 72px;
+        padding: 32px 20px 48px;
       }
 
-      .hero {
-        margin-bottom: 28px;
-        padding: 28px;
-        border: 1px solid var(--line);
-        background: var(--panel);
-        box-shadow: 0 18px 45px rgba(80, 60, 25, 0.08);
-      }
-
-      h1,
       h2 {
         margin: 0;
-        font-weight: 600;
-        letter-spacing: 0.02em;
-      }
-
-      h1 {
-        font-size: clamp(2rem, 4vw, 3rem);
-      }
-
-      .subtitle {
-        margin-top: 12px;
-        max-width: 700px;
-        color: var(--muted);
-        font-size: 1.05rem;
-        line-height: 1.6;
+        font-weight: 700;
+        font-size: 1.35rem;
       }
 
       .table-card {
-        margin-top: 26px;
-        padding: 22px;
-        border: 1px solid var(--line);
-        background: var(--panel);
-        box-shadow: 0 12px 30px rgba(80, 60, 25, 0.06);
+        margin-top: 28px;
         overflow-x: auto;
       }
 
       .table-title {
-        margin-bottom: 14px;
-      }
-
-      .table-title h2 {
-        font-size: 1.55rem;
-      }
-
-      .table-title p {
-        margin: 6px 0 0;
-        color: var(--muted);
-        line-height: 1.5;
+        margin-bottom: 10px;
       }
 
       table {
         width: 100%;
         border-collapse: collapse;
         min-width: 860px;
+        background: #ffffff;
       }
 
       th,
       td {
-        padding: 16px 18px;
-        border: 1px solid var(--line);
+        padding: 14px 16px;
+        border: 1px solid #000000;
         text-align: left;
         vertical-align: top;
         font-size: 1rem;
@@ -100,8 +55,8 @@
       }
 
       th {
-        background: #f3ede2;
         font-weight: 600;
+        background: #ffffff;
       }
 
       td:first-child,
@@ -110,23 +65,12 @@
       }
 
       .empty {
-        color: #8f877a;
-      }
-
-      .footnote {
-        margin-top: 12px;
-        color: var(--muted);
-        font-size: 0.95rem;
+        color: #000000;
       }
 
       @media (max-width: 720px) {
         .page {
-          padding: 28px 14px 48px;
-        }
-
-        .hero,
-        .table-card {
-          padding: 16px;
+          padding: 20px 12px 32px;
         }
 
         th,
@@ -138,18 +82,9 @@
   </head>
   <body>
     <main class="page">
-      <section class="hero">
-        <h1>Supplementary Tables</h1>
-        <p class="subtitle">
-          This page provides two supplementary tables in a simple web format so
-          they can be shared through a public repository link.
-        </p>
-      </section>
-
       <section class="table-card">
         <div class="table-title">
           <h2>Extra Table 1</h2>
-          <p>Training reward results across settings and optimization steps.</p>
         </div>
 
         <table>
@@ -212,7 +147,6 @@
       <section class="table-card">
         <div class="table-title">
           <h2>Extra Table 2</h2>
-          <p>Explosion-rate statistics for Jacobian and ratio signals.</p>
         </div>
 
         <table>
@@ -240,10 +174,6 @@
           </tbody>
         </table>
 
-        <p class="footnote">
-          Placeholder blank cells are kept intentionally so the final values can
-          be filled in later without changing the layout.
-        </p>
       </section>
     </main>
   </body>
